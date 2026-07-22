@@ -30,6 +30,11 @@ time, compute, and implementation-complexity budget.
 5. Establish a measurable baseline before introducing major architectural,
    tokenizer, data, or systems changes. Prefer controlled changes that preserve
    attribution of improvements and regressions.
+6. On the M4 Mac, keep all project-controlled environments, installed
+   libraries, managed Python installations, and caches inside the repository
+   root. This storage-location constraint does not apply to the 5090 or H100
+   environments. OS-managed caches may remain outside the repository when the
+   operating system or driver does not provide a supported override.
 
 ## Repository map
 
@@ -37,6 +42,9 @@ time, compute, and implementation-complexity budget.
 - GitHub: `https://github.com/shengming-zhou/cychat`
 - Default branch: `main`
 - `nanochat/`: ignored local reference source; not part of CyChat
+- `.venv/`, `.python/`, `.cache/`: ignored Mac-local environment and cache
+  locations; never commit their contents
+- `.env.mac.sh`: optional ignored Mac-only shell configuration
 - `README_BY_AGENT.md`: durable project state shared across conversations
 - `AGENTS.md`: instructions that require agents to read and maintain this file
 
@@ -46,6 +54,9 @@ time, compute, and implementation-complexity budget.
 - GitHub contains the project shell; no CyChat model/training implementation has
   been established yet.
 - The three-stage hardware workflow and final time budget are agreed.
+- Dependency management will use uv. The Mac environment/cache storage policy
+  is decided; the concrete `pyproject.toml` and Mac-local setup are not created
+  yet.
 - Model architecture, tokenizer, dataset mixture, parameter count, context
   length, training-token budget, and evaluation suite remain undecided.
 
@@ -101,4 +112,3 @@ hold only durable conclusions and the current next action.
 After a meaningful decision or experiment, update the date, current status,
 resolved/open decisions, and next action here. Keep facts separate from proposals
 and do not claim that an unrun experiment succeeded.
-

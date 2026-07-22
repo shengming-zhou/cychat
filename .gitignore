@@ -7,6 +7,9 @@
 
 # Python environments and caches
 .venv/
+/.python/
+/.cache/
+/.env.mac.sh
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -22,4 +25,3 @@ __pycache__/
 *.pt
 *.pth
 *.safetensors
-
