@@ -1,0 +1,25 @@
+# Local reference repository. Never commit or push it to CyChat.
+/nanochat/
+
+# macOS metadata
+.DS_Store
+._*
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local training outputs and large model artifacts
+/data/
+/datasets/
+/checkpoints/
+/artifacts/
+/wandb/
+*.pt
+*.pth
+*.safetensors
+
